@@ -1,0 +1,610 @@
+
+
+[2023-10-24 10:29:24 +0000] [53462] [INFO] Starting gunicorn 20.1.0
+[2023-10-24 10:29:24 +0000] [53462] [INFO] Listening at: http://89.33.44.114:8000 (53462)
+[2023-10-24 10:29:24 +0000] [53462] [INFO] Using worker: sync
+[2023-10-24 10:29:24 +0000] [53463] [INFO] Booting worker with pid: 53463
+[2023-10-24 10:29:24 +0000] [53464] [INFO] Booting worker with pid: 53464
+[2023-10-24 10:29:24 +0000] [53465] [INFO] Booting worker with pid: 53465
+[2023-10-24 10:36:10 +0000] [53462] [CRITICAL] WORKER TIMEOUT (pid:53465)
+[2023-10-24 10:36:10 +0000] [53465] [INFO] Worker exiting (pid: 53465)
+[2023-10-24 10:36:10 +0000] [53513] [INFO] Booting worker with pid: 53513
+[2023-10-24 10:54:07 +0000] [53464] [INFO] Parent changed, shutting down: <Worker 53464>
+[2023-10-24 10:54:07 +0000] [53464] [INFO] Worker exiting (pid: 53464)
+[2023-10-24 10:54:11 +0000] [53513] [INFO] Parent changed, shutting down: <Worker 53513>
+[2023-10-24 10:54:11 +0000] [53513] [INFO] Worker exiting (pid: 53513)
+[2023-10-24 10:54:13 +0000] [53463] [INFO] Parent changed, shutting down: <Worker 53463>
+[2023-10-24 10:54:13 +0000] [53463] [INFO] Worker exiting (pid: 53463)
+[2023-10-24 10:54:29 +0000] [53647] [INFO] Starting gunicorn 20.1.0
+[2023-10-24 10:54:29 +0000] [53647] [INFO] Listening at: http://89.33.44.114:8000 (53647)
+[2023-10-24 10:54:29 +0000] [53647] [INFO] Using worker: sync
+[2023-10-24 10:54:29 +0000] [53648] [INFO] Booting worker with pid: 53648
+[2023-10-24 10:54:29 +0000] [53649] [INFO] Booting worker with pid: 53649
+[2023-10-24 10:54:29 +0000] [53650] [INFO] Booting worker with pid: 53650
+[2023-10-24 10:56:19 +0000] [53647] [CRITICAL] WORKER TIMEOUT (pid:53648)
+[2023-10-24 10:56:19 +0000] [53648] [INFO] Worker exiting (pid: 53648)
+[2023-10-24 10:56:19 +0000] [53663] [INFO] Booting worker with pid: 53663
+[2023-10-24 10:59:12 +0000] [53647] [CRITICAL] WORKER TIMEOUT (pid:53649)
+[2023-10-24 10:59:12 +0000] [53649] [INFO] Worker exiting (pid: 53649)
+[2023-10-24 10:59:12 +0000] [53686] [INFO] Booting worker with pid: 53686
+[2023-10-24 11:00:04 +0000] [53647] [CRITICAL] WORKER TIMEOUT (pid:53663)
+[2023-10-24 11:00:04 +0000] [53663] [INFO] Worker exiting (pid: 53663)
+[2023-10-24 11:00:04 +0000] [53695] [INFO] Booting worker with pid: 53695
+[2023-10-24 11:18:46 +0000] [53647] [CRITICAL] WORKER TIMEOUT (pid:53650)
+[2023-10-24 11:18:46 +0000] [53650] [INFO] Worker exiting (pid: 53650)
+[2023-10-24 11:18:46 +0000] [53847] [INFO] Booting worker with pid: 53847
+[2023-10-24 11:18:46 +0000] [53847] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python3/dist-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python3/dist-packages/gunicorn/util.py", line 384, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/usr/local/lib/python3.10/dist-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/usr/local/lib/python3.10/dist-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/usr/local/lib/python3.10/dist-packages/django/conf/__init__.py", line 102, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python3.10/dist-packages/django/conf/__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python3.10/dist-packages/django/conf/__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/settings.py", line 59
+    CORS_ALLOW_HEADERS = (*default_headers)
+                          ^^^^^^^^^^^^^^^^
+SyntaxError: cannot use starred expression here
+[2023-10-24 11:18:46 +0000] [53847] [INFO] Worker exiting (pid: 53847)
+[2023-10-24 11:18:46 +0000] [53686] [INFO] Worker exiting (pid: 53686)
+[2023-10-24 11:18:46 +0000] [53695] [INFO] Worker exiting (pid: 53695)
+[2023-10-24 11:18:47 +0000] [53647] [INFO] Shutting down: Master
+[2023-10-24 11:18:47 +0000] [53647] [INFO] Reason: Worker failed to boot.
+[2023-10-24 14:08:33 +0000] [55446] [INFO] Starting gunicorn 21.2.0
+[2023-10-24 14:08:33 +0000] [55446] [INFO] Listening at: http://89.33.44.114:8000 (55446)
+[2023-10-24 14:08:33 +0000] [55446] [INFO] Using worker: sync
+[2023-10-24 14:08:33 +0000] [55447] [INFO] Booting worker with pid: 55447
+[2023-10-24 14:08:33 +0000] [55448] [INFO] Booting worker with pid: 55448
+[2023-10-24 14:08:33 +0000] [55449] [INFO] Booting worker with pid: 55449
+[2023-10-24 14:08:33 +0000] [55447] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 102, in __getattr__
+    self._setup(name)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/settings.py", line 59
+    CORS_ALLOW_HEADERS = (*default_headers)
+                          ^^^^^^^^^^^^^^^^
+SyntaxError: cannot use starred expression here
+[2023-10-24 14:08:33 +0000] [55447] [INFO] Worker exiting (pid: 55447)
+[2023-10-24 14:08:33 +0000] [55446] [ERROR] Worker (pid:55447) exited with code 3
+[2023-10-24 14:08:33 +0000] [55448] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 102, in __getattr__
+    self._setup(name)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/settings.py", line 59
+    CORS_ALLOW_HEADERS = (*default_headers)
+                          ^^^^^^^^^^^^^^^^
+SyntaxError: cannot use starred expression here
+[2023-10-24 14:08:33 +0000] [55448] [INFO] Worker exiting (pid: 55448)
+[2023-10-24 14:08:33 +0000] [55446] [ERROR] Worker (pid:55448) exited with code 3
+[2023-10-24 14:08:33 +0000] [55449] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 102, in __getattr__
+    self._setup(name)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/settings.py", line 59
+    CORS_ALLOW_HEADERS = (*default_headers)
+                          ^^^^^^^^^^^^^^^^
+SyntaxError: cannot use starred expression here
+[2023-10-24 14:08:33 +0000] [55449] [INFO] Worker exiting (pid: 55449)
+[2023-10-24 14:08:54 +0000] [55451] [INFO] Starting gunicorn 21.2.0
+[2023-10-24 14:08:54 +0000] [55451] [INFO] Listening at: http://89.33.44.114:8000 (55451)
+[2023-10-24 14:08:54 +0000] [55451] [INFO] Using worker: sync
+[2023-10-24 14:08:54 +0000] [55452] [INFO] Booting worker with pid: 55452
+[2023-10-24 14:08:54 +0000] [55453] [INFO] Booting worker with pid: 55453
+[2023-10-24 14:08:54 +0000] [55454] [INFO] Booting worker with pid: 55454
+[2023-10-24 14:08:54 +0000] [55452] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 102, in __getattr__
+    self._setup(name)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/settings.py", line 59
+    CORS_ALLOW_HEADERS = (*default_headers)
+                          ^^^^^^^^^^^^^^^^
+SyntaxError: cannot use starred expression here
+[2023-10-24 14:08:54 +0000] [55452] [INFO] Worker exiting (pid: 55452)
+[2023-10-24 14:08:55 +0000] [55451] [ERROR] Worker (pid:55452) exited with code 3
+[2023-10-24 14:08:55 +0000] [55453] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 102, in __getattr__
+    self._setup(name)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/settings.py", line 59
+    CORS_ALLOW_HEADERS = (*default_headers)
+                          ^^^^^^^^^^^^^^^^
+SyntaxError: cannot use starred expression here
+[2023-10-24 14:08:55 +0000] [55453] [INFO] Worker exiting (pid: 55453)
+[2023-10-24 14:08:55 +0000] [55454] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 102, in __getattr__
+    self._setup(name)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/settings.py", line 59
+    CORS_ALLOW_HEADERS = (*default_headers)
+                          ^^^^^^^^^^^^^^^^
+SyntaxError: cannot use starred expression here
+[2023-10-24 14:08:55 +0000] [55454] [INFO] Worker exiting (pid: 55454)
+[2023-10-24 14:08:55 +0000] [55451] [ERROR] Worker (pid:55453) exited with code 3
+[2023-10-24 14:10:08 +0000] [55475] [INFO] Starting gunicorn 21.2.0
+[2023-10-24 14:10:08 +0000] [55475] [INFO] Listening at: http://89.33.44.114:8000 (55475)
+[2023-10-24 14:10:08 +0000] [55475] [INFO] Using worker: sync
+[2023-10-24 14:10:08 +0000] [55476] [INFO] Booting worker with pid: 55476
+[2023-10-24 14:10:08 +0000] [55477] [INFO] Booting worker with pid: 55477
+[2023-10-24 14:10:08 +0000] [55476] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 102, in __getattr__
+    self._setup(name)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/settings.py", line 59
+    CORS_ALLOW_HEADERS = (*default_headers)
+                          ^^^^^^^^^^^^^^^^
+SyntaxError: cannot use starred expression here
+[2023-10-24 14:10:08 +0000] [55476] [INFO] Worker exiting (pid: 55476)
+[2023-10-24 14:10:08 +0000] [55475] [ERROR] Worker (pid:55476) exited with code 3
+[2023-10-24 14:10:08 +0000] [55477] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 19, in setup
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 102, in __getattr__
+    self._setup(name)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 89, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/conf/__init__.py", line 217, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1017, in get_code
+  File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/settings.py", line 59
+    CORS_ALLOW_HEADERS = (*default_headers)
+                          ^^^^^^^^^^^^^^^^
+SyntaxError: cannot use starred expression here
+[2023-10-24 14:10:08 +0000] [55477] [INFO] Worker exiting (pid: 55477)
+[2023-10-24 14:10:08 +0000] [55475] [ERROR] Worker (pid:55477) exited with code 3
+[2023-10-24 14:14:18 +0000] [55544] [INFO] Starting gunicorn 21.2.0
+[2023-10-24 14:14:18 +0000] [55544] [INFO] Listening at: http://89.33.44.114:8000 (55544)
+[2023-10-24 14:14:18 +0000] [55544] [INFO] Using worker: sync
+[2023-10-24 14:14:18 +0000] [55545] [INFO] Booting worker with pid: 55545
+[2023-10-24 14:14:18 +0000] [55546] [INFO] Booting worker with pid: 55546
+[2023-10-24 14:14:18 +0000] [55545] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/apps/config.py", line 193, in create
+    import_module(entry)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework'
+[2023-10-24 14:14:18 +0000] [55545] [INFO] Worker exiting (pid: 55545)
+[2023-10-24 14:14:19 +0000] [55544] [ERROR] Worker (pid:55545) exited with code 3
+[2023-10-24 14:14:19 +0000] [55546] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+    worker.init_process()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/gunicorn/util.py", line 371, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/accel/accel/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/root/accel/vdjango/lib/python3.10/site-packages/django/apps/config.py", line 193, in create
+    import_module(entry)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rest_framework'
+[2023-10-24 14:14:19 +0000] [55546] [INFO] Worker exiting (pid: 55546)
+[2023-10-24 14:14:19 +0000] [55544] [ERROR] Worker (pid:55546) exited with code 3

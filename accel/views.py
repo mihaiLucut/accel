@@ -5,9 +5,16 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 
+def my_requester(request):
+    print(f'Request Method: {request.method}')
+    print(f'Request Path: {request.path}')
+    print(f'Request User: {request.user}')
+    print(f'Request GET params: {request.GET}')
+    print(f'Request POST data: {request.POST}')
 
 @api_view(['GET', 'POST'])
 def lead_list(request, format=None):
+    my_requester(request)
     if request.method == 'GET':
         # get all the leads
         leads = Lead.objects.all()

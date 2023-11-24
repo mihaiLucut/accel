@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-oa9n$rbc=6wop+$@^ku91r5m6^_1v6q^wq%0uqb5s=e4iw1j-e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['89.33.44.114']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'rest_framework',
     'accel',
     'django.contrib.admin',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,7 +53,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_METHODS = ("GET", "POST")
+CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'accel.urls'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
 
 TEMPLATES = [
     {
@@ -101,7 +108,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers' : False,
+    'handlers':{
+        'file':{
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename':'/root/accel/logs/dlogfile.log',
 
+            },
+        },
+    'loggers':{
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+        
+}
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
